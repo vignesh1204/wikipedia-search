@@ -1,6 +1,13 @@
 import sys
 import datetime
 
+'''
+In cli mode, run python3 wikipedia.py <search-term> <log-file-name>
+for example, python3 wikipedia.py "india" "log2.txt"
+
+In interactive mode, run python3 wikipedia.py
+'''
+
 def wikipedia_search(keyword, file_name):
     keyword = keyword.replace(' ', '%20')
     url = "https://en.wikipedia.org/wiki/" + keyword
@@ -10,7 +17,7 @@ def wikipedia_search(keyword, file_name):
     file.write(d + ' - ' + keyword + ' - ' + url)
     file.close()
 
-if __name__=="__main__":
+if __name__=='__main__':
     if len(sys.argv) == 3:
         res = wikipedia_search(sys.argv[1], sys.argv[2])
     elif len(sys.argv) == 1:

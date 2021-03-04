@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#in cli mode, run ./wikipedia.sh [-s <search term>] [-l <log file name>]
+#for example, ./wikipedia.sh -s "batman begins" -l "new_log.txt"
+
+#in interactive mode, simply run ./wikipedia.sh
+
 if [ $# -eq 0 ]
 then
     read -p 'Enter search term: ' keyword
